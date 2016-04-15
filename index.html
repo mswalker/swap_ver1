@@ -1,100 +1,85 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-	<link rel="shortcut icon" type="image/x-icon" href="http://nmoroze.github.io/swap/favicon.ico">
 
-	<title>Swap</title>
-	<script src="js/tile.js"></script>
-	<script src="js/ai.js"></script>
-	<script src="js/levels.js"></script>
-	<script src="js/player.js"></script>
-	<script src="js/world.js"></script>
-	<script src="js/draw.js"></script>
-	<script src="js/keypress-1.0.8.min.js"></script>
-	<script src="js/input.js"></script>
-	<script type="text/javascript">
-		window.onload = function() {
-			//http://stackoverflow.com/questions/7425502/how-to-return-integer-from-url-hash-using-javascript
-			var level = window.location.hash.match(/\d+/) || 1;
-			world.init(level-1, "canvas", "hud", "tip");
-			document.getElementById("reset").onclick = function() {
-				world.resetLevel();
-			}
-			document.getElementById("skip").onclick = function() {
-				world.victory();
-			}
-			document.getElementById("mute").onclick = function() {
-				var music = document.getElementById("music");
-				if(music.paused) {
-					music.play();
-					document.getElementById("mute").innerHTML = "<i class='fa fa-volume-up'></i>";
-				}
-				else {
-					music.pause();
-					document.getElementById("mute").innerHTML = "<i class='fa fa-volume-off'></i>&nbsp;&nbsp;";
-				}
-			}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <title>BSD x Kellett School Swap Game</title>
 
-		}
-	</script>
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 
-	<audio id="music" src="music.mp3" preload autoplay loop></audio>
-	<meta property="og:image" content="thumbnail.png" />
+    <!-- Custom CSS -->
+  <link rel="stylesheet" type="text/css" href="css/style.css">
 
- <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
-	<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-
-	<style>
-		a.action-btn {
-			text-decoration: none;
-			color: gray;
-		}
-		a.action-btn:hover {
-			text-decoration: none;
-			color: gray;
-		}
-		body { 
-			font-family: "Open Sans", sans-serif; font-weight: 400; 
-/*			-webkit-transform: rotateZ(0deg);  Activates graphics acceleration and improves performance in some cases... 
-*/		}
-		#reset {
-			float: left;
-		}
-		#skip {
-			float: right;
-		}
-	</style>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
 </head>
+
 <body>
-<a href="https://github.com/nmoroze/swap"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
-<div style="width: 640px;text-align: center;margin: 0 auto">
-<span id="hud" style="font-size: 24px; margin-left: 110px;"></span>
-<span style="float: right;font-size: 36px;"><a href="#" id="mute" class="action-btn"><i class="fa fa-volume-up"></i></a></span>
-	<br>
-<canvas id="canvas" width="640" height="640" style="box-shadow:0 0 15px darkgrey;"></canvas>
-<span style="width: 640px;font-size:18px; display: inline-block;">
-	<a href="#" id="reset" class="action-btn"><em>Reset <i class="fa fa-repeat"></i></em></a>
-	<a href="#" id="skip" class="action-btn"><em>Skip <i class="fa fa-forward"></i></em></a>
-</span>
-<br>
-<span id="tip" style="font-size: 24px; text-align: center;"></span>
-<br>
-</div>	
-<!-- AddThis Smart Layers BEGIN -->
-<!-- Go to http://www.addthis.com/get/smart-layers to customize -->
-<script type="text/javascript" src="https://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-528c256940c52555"></script>
-<script type="text/javascript">
-  addthis.layers({
-    'theme' : 'transparent',
-    'share' : {
-      'position' : 'left',
-      'numPreferredServices' : 5
-    },  
-    'whatsnext' : {},  
-    'recommended' : {} 
-  });
-</script>  
-<!-- AddThis Smart Layers END -->
+
+
+    <!-- Page Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h1>The Ultimate Swap Game Challenge!</h1>
+                <p class="lead">BSD Code and Design Academy and Kellett School</p>
+                <ul class="list-unstyled">
+                    <li>Enter your name and email to play</li>
+                    <li>Highest score at the end of the fair will win a drone!</li>
+                </ul>
+            <div class="col-md-4">
+                <img src="css/images/bsdlogo.png">
+            </div>
+            <div class="col-md-4">
+                <div class="jumbotron vertical-center">
+                    <form role="form">
+                        <div class="row">
+                            <div class="form-group col-lg-12">
+                                <label for="name">Name:</label>
+                                <input type="text" class="form-control" id="name">
+                            </div>
+                        </div>
+                        <div class="row">
+                          <div class="form-group col-lg-12">
+                                <label for="email">Email:</label>
+                                <input type="email" class="form-control" id="email">
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="form-group col-lg-12">
+                          <button type="submit" class="btn btn-default" id="start">Start Game!</button>
+                          </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <img class="resize" src="css/images/kelletlogo.png">
+            </div>
+        </div>
+        <!-- /.row -->
+
+    </div>
+    <!-- /.container -->
+
+    <!-- jQuery Version 1.11.1 -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
 </body>
+
 </html>

@@ -1,0 +1,59 @@
+body{
+	
+	background-image: url("images/cream_pixels.png"); 
+	margin: 30px;
+	
+}
+
+.jumbotron{
+	background-color: #ffffff !important;
+	color: #3A3939 !important;
+	min-height: 300px;
+	margin: 30px;
+
+}
+
+.vertical-center {
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+	
+}
+
+.form-group{
+	display: inline-block;
+	text-align: center;
+}
+
+#start{
+	margin: 10px;
+}
+
+.resize{
+	width:400px;
+	margin-top: -7%;
+	margin-left: -8%;
+}
+
+.resultsSize{
+	width:200px;
+}
+
+table th {
+    width: auto !important;
+}
+
+table{
+	margin-top: 20px;
+}
+.endPage{
+	width: 300px;
+}
+
+.description{
+	margin:20px;
+}
+
+.col-md-4{
+color: #333!important;
+}
